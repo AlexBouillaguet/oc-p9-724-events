@@ -7,8 +7,8 @@ import "./style.scss"
 const Slider = () => {
   const { data } = useData()
   const [index, setIndex] = useState(0)
-  const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+  const byDateDesc = data?.focus.sort(
+    (evtA, evtB) => new Date(evtA.date) - new Date(evtB.date)
   )
   const nextCard = () => {
     if (byDateDesc && byDateDesc.length > 0) {
@@ -20,7 +20,7 @@ const Slider = () => {
   }
   useEffect(() => {
     nextCard()
-  }, [index])
+  }, [index, byDateDesc])
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
