@@ -28,21 +28,6 @@ export const DataProvider = ({ children }) => {
     }
   }, [])
 
-  // const getData = useCallback(async () => {      (possibilité de filtrer les doublons)
-  //   try {
-  //     const rawData = await api.loadData();
-  //     const uniqueEvents = rawData.events.filter((event, index, self) =>
-  //       index === self.findIndex((e) => 
-  //         e.name === event.name && 
-  //         e.date === event.date && 
-  //         e.type === event.type
-  //       )
-  //     );
-  //     setData({ ...rawData, events: uniqueEvents });
-  //   } catch (err) {
-  //     setError(err);
-  //   }
-  // }, []);
 
   useEffect(() => {
     if (data) return

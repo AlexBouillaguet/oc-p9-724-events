@@ -49,7 +49,6 @@ const Slider = () => {
               type="radio"
               name="radio-button"
               checked={index === byDateDesc.indexOf(event)}
-              onChange={() => setIndex(byDateDesc.indexOf(event))}
             />
           ))}
         </div>
